@@ -3,6 +3,7 @@ NAME : Top Earners
 TYPE : AGGREGATION
 TOOL : COUNT(), LIMIT 1
 QUESTION :  
+SAMPLE OUTPUT : 
 The maximum earnings value is 69952. 
 The only employee with earnings 69952 is Kimberly, so we print the maximum earnings value () and 
 a count of the number of employees who have earned  (which is 69952) as two space-separated values.
@@ -23,6 +24,7 @@ NAME : Average Population
 TYPE : AGGREGATION
 TOOL : FLOOR(AVG())
 QUESTION :  
+SAMPLE OUTPUT : 
 '''
 SELECT FLOOR(AVG(POPULATION)) '''rounded down'''
 FROM CITY;
@@ -34,6 +36,7 @@ TOOL : CEIL(), REPLACE()
 QUESTION :  
  She did not realize her keyboard 0 key was broken until after completing the calculation. 
  She wants your help finding the difference between her miscalculation (using salares with any zeros removed), and the actual average salary.
+SAMPLE OUTPUT : 
 '''
 SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0',''))) FROM EMPLOYEES;
 
@@ -42,6 +45,7 @@ NAME : Japan Population
 TYPE : AGGREGATION
 TOOL : 
 QUESTION :  
+SAMPLE OUTPUT : 
 '''
 SELECT SUM(Population)
 FROM City
