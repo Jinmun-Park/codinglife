@@ -230,9 +230,12 @@ FROM Students as s INNER JOIN Friends as f
 INNER JOIN Packages as p 
     ON s.ID = p.ID 
 INNER JOIN 
+    ''' THIS SHOWS FRIEND ID AND SALARY '''
     (SELECT Friends.Friend_ID, Packages.Salary
     FROM Friends INNER JOIN Packages 
         ON Friends.Friend_ID = Packages.ID) AS Friend_Salary
+    ''''''
     ON f.Friend_ID = Friend_Salary.Friend_ID
+    ''' MERGE FRIEND ID, SALARY TO COMPARE SALARY BETWEEN FRIEND SALARY AND STUDENT SALARY '''
 WHERE Friend_Salary.Salary > p.Salary
 ORDER BY Friend_Salary.Salary
