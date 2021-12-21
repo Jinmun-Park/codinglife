@@ -78,7 +78,8 @@ QUESTION :
   If more than one hacker received full scores in same number of challenges, then sort them by ascending hacker_id.
 EXPLANATION : -
 SAMPLE OUTPUT : -
-DESCRIPTION : 
+DESCRIPTION :
+  FROM QUERY에서는 submission을 중점으로 FROM + JOIN 을 실행하였다.
 
 '''
 SELECT 
