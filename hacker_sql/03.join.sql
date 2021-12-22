@@ -153,7 +153,7 @@ DESCRIPTION :
  6. HAVING은 추가적인 GROUP BY를 요구하지 않는 매칭에 활용한다.
 
 '''
-SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS challenge_counter
+SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS challenge_counter ''' AS MUST BE REQUIRED '''
 FROM hackers h
 JOIN challenges c
     ON h.hacker_id = c.hacker_id
