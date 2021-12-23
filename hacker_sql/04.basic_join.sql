@@ -39,18 +39,19 @@ SAMPLE OUTPUT : -
 
 DESCRIPTION : 
 ------------------------------------------------------------------------------------------------------------ ''' 
-
-SELECT 
-    IF(GRADE < 8, NULL, NAME), '''Q asks for Null on Name only. HENCE, WE ARE NOT USING HAVING HERE'''
-    GRADE, 
-    MARKS
+SELECT
+    IF(g.Grade < 8, 'NULL', s.Name),
+    g.Grade,
+    s.Marks
 FROM 
-    Students S JOIN Grades G
-WHERE ''' IMPORTANT '''
-    S.MARKS BETWEEN G.MIN_MARK AND G.MAX_MARK
+    Students AS s,
+    Grades AS g
+WHERE
+    s.Marks BETWEEN g.Min_Mark AND g.Max_Mark
 ORDER BY
-    G.GRADE DESC,
-    NAME
+    g.Grade DESC,
+    s.Name,
+    s.Marks ASC
     
 ''' ------------------------------------------------------------------------------------------------------------
 NAME : Top Competitors
