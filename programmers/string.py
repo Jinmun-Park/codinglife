@@ -8,7 +8,6 @@ s = "aabbaccc"
 
 def solution(s):
     result = []
-
     if len(s) == 1:
         return 1
     for i in range(1, (len(s)//2)+1): # "aabba|ccc" (1,2,3,4) --> a,b,b,a
@@ -40,10 +39,10 @@ def solution(s):
                     b = b + tmp
                 tmp = s[j:j+i]
                 cnt = 1
-            if cnt != 1:
-                b = b + str(cnt) + tmp
-            else:
-                b = b + tmp
+        if cnt != 1:
+            b = b + str(cnt) + tmp
+        else:
+            b = b + tmp
 
-            result.append(len(b))
-        return min(result)
+        result.append(len(b))
+    return min(result)
