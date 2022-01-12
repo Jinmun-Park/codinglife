@@ -1,4 +1,4 @@
-'''
+''' ******************************************************************************************************
 001 : 문자열 압축
   LEVEL : 2
 '''
@@ -63,7 +63,7 @@ def solution(s):
 def solution(text):
     return min(compress(text, tok_len) for tok_len in list(range(1, int(len(text)/2) + 1)) + [len(text)])
 
-'''
+''' ******************************************************************************************************
 002 : 신규 아이디 추천
   LEVEL : 1
 '''
@@ -93,3 +93,16 @@ def solution(new_id):
     if len(answer) <= 3:
         answer = answer + answer[-1] * (3-len(answer))
     return answer
+  
+''' ******************************************************************************************************
+003 : 숫자 문자열과 영단어
+  LEVEL : 1
+'''
+  
+def solution(s):
+    answer = 0
+    a = ['zero', 'one', 'two', 'three', 'four',
+         'five', 'six', 'seven', 'eight', 'nine']
+    for i in a:
+        s = s.replace(i, str(a.index(i)))
+    return int(s)
